@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <div class="appinfo-container text-center">
+        <img class="appinfo-profile" [src]="sjcLogo" alt="SJC Logo"><br>
+        <span class="appinfo-sjc">Student (appversion)</span>
+      </div>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="welcome" routerLinkActive="isactive"><mat-icon style="margin-right: 3px;">sentiment_satisfied_alt</mat-icon>Welcome</a>
+      <a mat-list-item routerLink="dashboard" routerLinkActive="isactive"><mat-icon style="margin-right: 3px;">dashboard</mat-icon>Dashboard</a>
+      <a mat-list-item routerLink="profile" routerLinkActive="isactive"><mat-icon style="margin-right: 3px;">account_box</mat-icon>Profile</a>
+      <a mat-list-item routerLink="settings" routerLinkActive="isactive"><mat-icon style="margin-right: 3px;">settings</mat-icon>Settings</a>
+      <a mat-list-item (click)="openDialog()" routerLink="logout" routerLinkActive="isactive"><mat-icon style="margin-right: 3px;">logout</mat-icon>Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>  
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+        <button style="color: white;"
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon style=" position: relative; right: 20px; bottom: 3px;" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>Student Portal</span>
+      <img class="appinfo-banner" src="assets/image/sjcobanner-2.svg" alt="SJC Banner">
+    </mat-toolbar>
+    <div class="admin-container content"><router-outlet (activate)="onActivate()" /></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,57 @@
+.profile-title h2{
+    font-size: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.profile-container-body p{
+  font-style: italic; 
+  font-weight: lighter; 
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.hcol-label{
+  justify-content: center;
+}
+
+.mat-step-icon-content{
+  border: green 50px 20px;
+}
+
+.header-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+
+.mat-icon{
+  margin-left: 3px;
+}
+
+.header-align span{
+  color: white;
+  border-radius: 10px;
+  background-color: #216a6a;
+  padding: 10px;
+}
+
+.info-2{
+  color: blue;
+  font-style: italic; 
+  font-weight: 500;
+}
+
+.info-3{
+  color: blue;
+  font-style: italic; 
+  font-weight: 500;
+}
+
+.info-4{
+  color: darkgreen;
+}
+

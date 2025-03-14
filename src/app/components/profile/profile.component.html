@@ -1,0 +1,382 @@
+<div class="profile-title">
+  <mat-card appearance="outlined">
+    <mat-card-content><strong>Profile/Enlistment</strong>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="15" width="20" style="padding-left: 5px;">
+        <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+      </svg>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="profile-container-body">
+<p>This section is for updating of profile and enlistment. You have to accomplish the forms first before proceeding with the enlistment. 
+  The information that will be gathered are as follows: personal information, educational background, family background, health information, government membership, and other information like 
+  available devices, talents, etc. After completing all the required <strong>(*)</strong> information, 
+  then you may proceed with enlistment which is in the last step of the process.</p>
+</div>
+
+<section>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody class="align-middle">
+        <tr><td class="hcol-label"><strong>Student Number</strong></td><td class="hcol-content">000000</td></tr>
+        <tr><td class="hcol-label"><strong>Fullname</strong></td><td class="hcol-content upcase">Juan Dela Cruz</td></tr>
+        <tr><td class="hcol-label"><strong>Section</strong></td><td class="hcol-content">BSGC - Garbage Collector</td></tr>
+        <tr><td class="hcol-label"><strong>Email Address</strong></td><td class="hcol-content">*email*</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <mat-accordion class="header-align">
+  <mat-expansion-panel [expanded]="step() === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+    <div class="mat-step-icon mat-step-icon-state-number mat-step-icon-selected">
+      <div class="mat-step-icon-content">
+        <span aria-hidden="true" class="ng-star-inserted">1</span>
+      </div>
+    </div>
+
+      <mat-panel-title style= "font-weight: 700;">DATA PRIVACY STATEMENT
+        <mat-icon>warning</mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p style="font-style: italic; font-weight: 400;">By clicking the <strong>"Done"</strong> button, I recognize the authority of the SJCO to process my personal and sensitive personal information, pursuant to the SJCO General Privacy Notice and applicable laws, and agree to the collection
+       and use of information in accordance with the policy stated.</p>
+       <mat-action-row>
+        <button mat-flat-button (click)="nextStep()">Done</button>
+      </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step() === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+    <div class="mat-step-icon mat-step-icon-state-number mat-step-icon-selected">
+      <div class="mat-step-icon-content">
+        <span aria-hidden="true" class="ng-star-inserted">2</span>
+      </div>
+    </div>
+
+      <mat-panel-title style= "font-weight: 700;">PERSONAL INFORMATION
+        <mat-icon>account_circle</mat-icon>
+       </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Middle Name</mat-label>
+      <input matInput placeholder="Middle Name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+    <mat-label>Ext Name</mat-label>
+      <mat-select>
+      <mat-option value="None">None</mat-option>
+      <mat-option value="Sr">Sr</mat-option>
+      <mat-option value="Jr">Jr</mat-option>
+      <mat-option value="I">I</mat-option>
+      <mat-option value="II">II</mat-option>
+      <mat-option value="III">III</mat-option>
+      <mat-option value="IV">IV</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Place of Birth</mat-label>
+      <input matInput placeholder="Place of Birth" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Civil Status</mat-label>
+        <mat-select>
+        <mat-option value="Single">Single</mat-option>
+        <mat-option value="Married">Married</mat-option>
+        <mat-option value="Widowed">Widowed</mat-option>
+        <mat-option value="Seperated">Seperated</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sex</mat-label>
+          <mat-select>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+       <div class="info-2">
+        <p>Current Address</p>
+       </div>
+
+       <mat-form-field appearance="outline">
+        <mat-label>Region</mat-label>
+          <mat-select>
+          <mat-option value="Region III (CENTRAL LUZON)">Region III (CENTRAL LUZON)</mat-option>
+          <mat-option value="Region II">Region II</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Province</mat-label>
+            <mat-select>
+            <mat-option value="Zambales">Zambales</mat-option>
+            <mat-option value="Pampanga">Pampanga</mat-option>
+          </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>City/Municipality</mat-label>
+              <mat-select>
+              <mat-option value="Olongapo">Olongapo</mat-option>
+              <mat-option value="Iba">Iba</mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Barangay</mat-label>
+                <mat-select>
+                <mat-option value="East Bajac Bajac">East Bajac Bajac</mat-option>
+                <mat-option value="West Bajac Bajac">West Bajac Bajac</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>House Lot/Lot No</mat-label>
+              <input matInput placeholder="Ex. West Tapinac" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Zip Code</mat-label>
+              <input matInput placeholder="Ex. 1100" required>
+            </mat-form-field>
+
+            <div class="info-2">
+              <p style="font-style: italic; font-weight: 500;">Personal Disability Information</p>
+             </div>
+
+             <mat-form-field appearance="outline">
+              <mat-label style="font-size: 12px; font-weight: 500;">Are you a person with disability?</mat-label>
+                <mat-select>
+                <mat-option value="No">No</mat-option>
+                <mat-option value="Yes">Yes</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Disability Category</mat-label>
+                <mat-select>
+                <mat-option value="Physical Disability">Physical Disability</mat-option>
+                <mat-option value="Visual Disability">Visual Disability</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Disability Details</mat-label>
+              <textarea matInput></textarea>
+            </mat-form-field>
+
+          <mat-action-row>
+            <button mat-stroked-button (click)="prevStep()">Previous</button>
+            <button mat-flat-button (click)="nextStep()">Done</button>
+           </mat-action-row>
+          </mat-expansion-panel>
+
+           <mat-expansion-panel [expanded]="step() === 2" (opened)="setStep(2)" hideToggle>
+              <mat-expansion-panel-header>
+              <div class="mat-step-icon mat-step-icon-state-number mat-step-icon-selected">
+                <div class="mat-step-icon-content">
+                  <span aria-hidden="true" class="ng-star-inserted">3</span>
+                </div>
+              </div>
+          
+            <mat-panel-title style= "font-weight: 700;">EDUCATION
+              <mat-icon>book</mat-icon>
+               </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>College</mat-label>
+                  <input matInput placeholder="College" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Program</mat-label>
+                  <input matInput placeholder="Program" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Year Level</mat-label>
+                  <input matInput placeholder="Year Level" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Scholarship Type</mat-label>
+                    <mat-select>
+                    <mat-option value="FHE">FHE</mat-option>
+                    <mat-option value="Paying">Paying</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Other Scholarship</mat-label>
+                  <input matInput placeholder="Other Scholarship" required>
+                </mat-form-field>
+
+                <br>
+                <mat-form-field appearance="outline">
+                  <mat-label>Elementay School</mat-label>
+                  <input matInput placeholder="Elementay School" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Year Graduated</mat-label>
+                  <input matInput placeholder="Year Graduated" required>
+                </mat-form-field>
+                
+                <br>
+                <mat-form-field appearance="outline">
+                  <mat-label>SHS/HS Graduated</mat-label>
+                  <input matInput placeholder="SHS/HS Graduated" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Year Graduated</mat-label>
+                  <input matInput placeholder="Year Graduated" required>
+                </mat-form-field>
+
+       <mat-action-row>
+        <button mat-stroked-button (click)="prevStep()">Previous</button>
+        <button mat-flat-button (click)="nextStep()">Done</button>
+       </mat-action-row>
+      </mat-expansion-panel>
+
+      
+      <mat-expansion-panel [expanded]="step() === 3" (opened)="setStep(3)" hideToggle>
+        <mat-expansion-panel-header>
+        <div class="mat-step-icon mat-step-icon-state-number mat-step-icon-selected">
+          <div class="mat-step-icon-content">
+            <span aria-hidden="true" class="ng-star-inserted">4</span>
+          </div>
+        </div>
+    
+      <mat-panel-title style= "font-weight: 700;">FAMILY
+        <mat-icon>supervised_user_circle</mat-icon>
+         </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="info-3">
+            <p>Father's Profile</p>
+           </div>
+
+           <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Occupation</mat-label>
+            <input matInput placeholder="Occupation" required>
+          </mat-form-field>
+
+          <div class="info-3">
+            <p>Mother's Profile</p>
+           </div>
+
+           <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Occupation</mat-label>
+            <input matInput placeholder="Occupation" required>
+          </mat-form-field>
+
+          <mat-action-row>
+            <button mat-stroked-button (click)="prevStep()">Previous</button>
+            <button mat-flat-button (click)="nextStep()">Done</button>
+           </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step() === 4" (opened)="setStep(4)" hideToggle>
+            <mat-expansion-panel-header>
+            <div class="mat-step-icon mat-step-icon-state-number mat-step-icon-selected">
+              <div class="mat-step-icon-content">
+                <span aria-hidden="true" class="ng-star-inserted">5</span>
+              </div>
+            </div>
+        
+          <mat-panel-title style= "font-weight: 700;">HEALTH
+            <mat-icon>favorite</mat-icon>
+             </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="info-4">
+                <p>Are you vaccinated?</p>
+               </div>
+
+               <mat-form-field appearance="outline">
+                  <mat-select>
+                  <mat-option value="I am fully vaccinated (1st and 2nd dose)">I am fully vaccinated (1st and 2nd dose)</mat-option>
+                  <mat-option value="I am fully vaccinated - Booster">I am fully vaccinated - Booster</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              <mat-action-row>
+                <button mat-stroked-button (click)="prevStep()">Previous</button>
+                <button mat-flat-button (click)="nextStep()">Done</button>
+               </mat-action-row>
+              </mat-expansion-panel>
+      
+
+</mat-accordion>
+</section>
+
+
+
+
+
+
+
+
+
+
+

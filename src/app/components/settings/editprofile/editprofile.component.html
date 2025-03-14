@@ -1,0 +1,19 @@
+<h2 mat-dialog-title style="font-weight: 500;">Edit Profile</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username" name="username" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email" type="email" required>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button (click)="onNoClick()">Cancel</button>
+      <button mat-flat-button color="primary" type="submit">Save Changes</button>
+    </div>
+  </form>
+</mat-dialog-content>

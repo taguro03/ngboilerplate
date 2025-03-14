@@ -1,0 +1,104 @@
+@use "../themes/boiler";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 6px 0 6px rgba( 0, 0, 0, .3);
+  border-radius: 0;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  height: auto;
+}
+
+.sidenav .mat-toolbar .app-profile {
+  height: auto;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: boiler.$teal-900;
+  color: boiler.$teal-50;
+  padding: 50px;
+}
+
+.mat-mdc-nav-list .mat-mdc-list-item {
+  // color: white;
+  border-radius: 0;
+}
+
+.mat-button-wrapper{
+  position: relative;
+  z-index: auto;
+}
+
+.admin-container {
+  // padding: 20px 20px 0 20px;
+  min-height: 88vh;
+  background-color: white;
+}
+
+.is-active {
+  background-color:lightgray;
+  color: black !important;
+}
+
+.is-active span {
+  // background-color: rgba(255, 255, 255, .7);
+  color: black !important;
+}
+
+.appinfo {
+  &-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  &-profile {
+    width: 80%;
+    border-radius: 50%;
+  }
+
+  &-sjc {
+    font-size: .8rem !important;
+    font-weight: bolder;
+  }
+
+  &-dept {
+    font-size: 1rem !important;
+    font-weight: bolder;
+  }
+
+  &-user {
+    font-size: 0.8rem !important
+  }
+
+  &-banner {
+    width: 100px;
+    position: sticky;
+    left: 100%;
+  }
+}
+
+.appinfo-gc{
+  font: 1em Roboto, "Helvetica Neue", sans-serif;
+}
+
+.appinfo-profile{
+  width: 110px;
+}
+
+.sublabel {
+  padding-left: 15px !important;
+}
+
+.mat-divider {
+  border-top-color: lightgray;
+}
